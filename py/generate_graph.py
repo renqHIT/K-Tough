@@ -44,7 +44,7 @@ def generate_graph(vertices):
 
 
 if __name__ == '__main__':
-	g = generate_graph(10)
-	graph_draw(g, output_size=(1000,1000), output="graph-4.png" )
-	g.save("graph-4.xml.gz")
+	g = generate_graph(6)
+	graph_draw(g, vertex_text=g.vertex_index, vertex_font_size=18, output_size=(500, 500), output="example-1.png")
+
 	print g
