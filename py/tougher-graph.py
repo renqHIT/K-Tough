@@ -16,6 +16,7 @@ def tougher_graph(vertices, edges):
 
 
 if __name__ == '__main__':
-	g = tougher_graph(6, 10)
+	g = tougher_graph(6, 8)
+	g.save("running-example-2.xml.gz")
 	graph_draw(g, vertex_text=g.vertex_index, vertex_font_size=18, output_size=(500,500), output="example-2.png")
 
