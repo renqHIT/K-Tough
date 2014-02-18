@@ -1,6 +1,28 @@
 from graph_tool.all import *
 from numpy.random import *
 
+
+def path_graph(n):
+	g = Graph()
+	g.add_vertex(n)
+	
+	for i in range(n-1):
+		g.add_edge(g.vertex(i), g.vertex(i+1))
+	
+	return g
+
+
+def circle_graph(n):
+	g = Graph()
+	g.add_vertex(n)
+	
+	for i in range(n-1):
+		g.add_edge(g.vertex(i), g.vertex(i+1))
+	g.add_edge(g.vertex(n-1),g.vertex(0))
+	
+	return g
+
+
 def generate_graph(vertices):
 	# We start with an empty graph	
 	g = Graph()
@@ -46,5 +68,13 @@ def generate_graph(vertices):
 if __name__ == '__main__':
 	g = generate_graph(6)
 	graph_draw(g, vertex_text=g.vertex_index, vertex_font_size=18, output_size=(500, 500), output="example-1.png")
+
+	path = path_graph(8)
+	graph_draw(path, vertex_font_size=18, output_size=(200,200), output="path.pdf")
+	path.save("path.xml.gz")
+
+	circle = circle_graph(8)
+	graph_draw(circle, vertex_font_size=18, output_size=(200,200), output="circle.pdf")
+	path.save("circle.xml.gz")
 
 	print g
