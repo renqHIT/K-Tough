@@ -65,6 +65,7 @@ def explore(g, v):
 
 def num_cc(g):
 	cc = 0
+	visited = {}
 	for v in g.vertices():
 		visited[v] = False
 

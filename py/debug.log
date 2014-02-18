@@ -1,0 +1,8 @@
+--------------------------------listing all 1 combinations---------------------------
+|S| = {0}
+residual graph :  <Graph object, undirected, with 7 vertices and 6 edges at 0x32e5810>
+w(G-S) = 1
+k = 1.000000
+-------------------------------------------------------------------------------------
+|S| = {1}
+residual graph :  <Graph object, undirected, with 7 vertices and 5 edges at 0x32e5910>
