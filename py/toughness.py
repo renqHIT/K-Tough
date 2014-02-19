@@ -3,7 +3,6 @@ from numpy.random import random
 from numpy.random import poisson
 from itertools import combinations
 import sys
-import pdb
 
 #f_handler = open('debug.log','w')
 #sys.stdout = f_handler
@@ -42,7 +41,9 @@ def num_cc(g):
 if __name__ == '__main__':
 	# load graph and initialize
 	#g = random_graph(100, lambda: (poisson(2), poisson(2)))
-	g = load_graph("./data/running-examples/running-example-1.xml.gz")
+	#g = load_graph("./data/running-examples/running-example-1.xml.gz")
+	#g = load_graph("./data/running-examples/running-example-2.xml.gz")
+	g = load_graph("./data/small-cases/graph-4.xml.gz")
 	#g = load_graph("./data/running-examples/path.xml.gz")
 	#g = load_graph("./data/running-examples/circle.xml.gz")
 	g.set_directed(False)
@@ -50,5 +51,3 @@ if __name__ == '__main__':
 	# calculate toughness
 	t = toughness(g)
 	print 'toughness = %f' % t
-
-	graph_draw(g, output = "poisson.pdf")
