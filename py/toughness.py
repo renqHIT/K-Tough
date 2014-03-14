@@ -2,6 +2,7 @@ from graph_tool.all import *
 from numpy.random import random
 from numpy.random import poisson
 from itertools import combinations
+import time
 import sys
 
 #f_handler = open('debug.log','w')
@@ -39,6 +40,7 @@ def num_cc(g):
 
 
 if __name__ == '__main__':
+	begin_time = time.clock()
 	# load graph and initialize
 	#g = random_graph(100, lambda: (poisson(2), poisson(2)))
 	#g = load_graph("./data/running-examples/running-example-1.xml.gz")
@@ -51,3 +53,5 @@ if __name__ == '__main__':
 	# calculate toughness
 	t = toughness(g)
 	print 'toughness = %f' % t
+	end_time = time.clock()
+	print 'Total running time : ', end_time - begin_time 
