@@ -65,16 +65,35 @@ def generate_graph(vertices):
 	return g
 
 
-if __name__ == '__main__':
-	g = generate_graph(6)
-	graph_draw(g, vertex_text=g.vertex_index, vertex_font_size=18, output_size=(500, 500), output="example-1.png")
-
-	path = path_graph(8)
-	graph_draw(path, vertex_font_size=18, output_size=(200,200), output="path.pdf")
-	path.save("path.xml.gz")
-
-	circle = circle_graph(8)
-	graph_draw(circle, vertex_font_size=18, output_size=(200,200), output="circle.pdf")
-	path.save("circle.xml.gz")
-
+def txt2xml(txt_path, num_nodes, num_edges):
+	g = Graph(directed = False)
+	g.add_vertex(num_nodes)
+	maxa = 0
+	maxb = 0
+	with open(txt_path, 'r') as f:
+		for line in f:
+			a, b = line.split()
+			#if int(a) > maxa:	maxa = int(a)
+			#if int(b) > maxb:	maxb = int(b)
+			g.add_edge(int(a), int(b))
+	#print 'maxa = %d' %maxa
 	print g
+	return g
+
+if __name__ == '__main__':
+	#g = generate_graph(6)
+	#graph_draw(g, vertex_text=g.vertex_index, vertex_font_size=18, output_size=(500, 500), output="./data/example-1.png")
+
+	#path = path_graph(8)
+	#graph_draw(path, vertex_font_size=18, output_size=(200,200), output="./data/path.pdf")
+	#path.save("./data/path.xml.gz")
+
+	#circle = circle_graph(8)
+	#graph_draw(circle, vertex_font_size=18, output_size=(200,200), output="./data/circle.pdf")
+	#path.save("./data/circle.xml.gz")
+
+	ca_road = txt2xml("./data/SNAP/roadNet-CA.txt", 1971281, 2766607)
+	ca_road.save("./data/ca_road.xml.gz")
+
+	com_dblp = txt2xml("./data/SNAP/com-dblp.txt", 425957, 1049866)
+	com_dblp.save("./data/com_dblp.xml.gz")
