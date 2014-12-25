@@ -1,0 +1,17 @@
+[0m[[0minfo[0m] [0mPackaging /home/renq/k-tough/target/scala-2.10/toughness_2.10-1.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	Operator.class[0m
+[0m[[0mdebug[0m] [0m	  /home/renq/k-tough/target/scala-2.10/classes/Operator.class[0m
+[0m[[0mdebug[0m] [0m	Toughness$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/renq/k-tough/target/scala-2.10/classes/Toughness$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	Toughness$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  /home/renq/k-tough/target/scala-2.10/classes/Toughness$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	Toughness.class[0m
+[0m[[0mdebug[0m] [0m	  /home/renq/k-tough/target/scala-2.10/classes/Toughness.class[0m
+[0m[[0mdebug[0m] [0m	Operator$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/renq/k-tough/target/scala-2.10/classes/Operator$.class[0m
+[0m[[0mdebug[0m] [0m	Toughness$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/renq/k-tough/target/scala-2.10/classes/Toughness$.class[0m
+[0m[[0mdebug[0m] [0m	Toughness$$anonfun$main$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/renq/k-tough/target/scala-2.10/classes/Toughness$$anonfun$main$1.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
