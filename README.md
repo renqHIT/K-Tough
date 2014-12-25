@@ -2,7 +2,7 @@ K-Tough
 =======
 This is a trial for calculating the TOUGHNESS for any given graph.
 
-#Usage 
+##Usage 
 * To compile and package the project,
 ```
 sbt package
