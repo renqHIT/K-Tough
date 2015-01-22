@@ -4,7 +4,7 @@
 		module="toughness_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20141215181106"
+		publication="20150122223328"
 	>
 		<description>
 		Toughness
@@ -34,6 +34,7 @@
 		<dependency org="org.scala-lang" name="scala-library" rev="2.10.4" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-core_2.10" rev="1.1.1" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-graphx_2.10" rev="1.1.1" conf="compile->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.10" rev="2.0" conf="test->default(compile)"/>
 		<exclude org="org.scala-lang" module="scala-library" artifact="*" type="jar" ext="*" matcher="exact"/>
 		<exclude org="org.scala-lang" module="scala-compiler" artifact="*" type="jar" ext="*" matcher="exact"/>
 		<override org="org.scala-lang" module="scala-library" matcher="exact" rev="2.10.4"/>

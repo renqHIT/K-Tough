@@ -1,0 +1,4 @@
+[0m[[0minfo[0m] [0m[32mStackSpec:[0m[0m
+[0m[[0minfo[0m] [0m[32mA Stack[0m[0m
+[0m[[0minfo[0m] [0m[32m- should pop values in last-in-first-out order[0m[0m
+[0m[[0minfo[0m] [0m[32m- should throw NoSuchElementException if an empty stack is popped[0m[0m
