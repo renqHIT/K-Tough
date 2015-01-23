@@ -1,4 +1,6 @@
 [0m[[0mdebug[0m] [0mRunning Test StackSpec : subclass(false, org.scalatest.Suite) with arguments [0m
-[0m[[0minfo[0m] [0mPassed: : Total 2, Failed 0, Errors 0, Passed 2, Skipped 0[0m
+[0m[[0mdebug[0m] [0mRunning Test ToughTest : subclass(false, org.scalatest.Suite) with arguments [0m
+[0m[[0minfo[0m] [0mPassed: : Total 5, Failed 0, Errors 0, Passed 5, Skipped 0[0m
 [0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	ToughTest[0m
 [0m[[0mdebug[0m] [0m	StackSpec[0m

@@ -1,0 +1,5 @@
+[0m[[0minfo[0m] [0m[32mToughTest:[0m[0m
+[0m[[0minfo[0m] [0m[32mThe toughness calculator[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return 1/(n-1) when calculating a star graph[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return 1/2 when calculating a line graph[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return 1 when calculating a circle graph[0m[0m

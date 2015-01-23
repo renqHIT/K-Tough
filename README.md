@@ -1,6 +1,9 @@
 K-Tough
 =======
 This is a trial for calculating the TOUGHNESS for any given graph.
+Let G(V,E) be an undirected graph, the toughness t(G) of G is defined as:
+	t(G) = min{|S|/w(G-S) | S \in V(G), w(G-S) \geq 2}
+where S is any vertex seperator for G, w(G) is the number of connected components of G.
 
 ##Usage 
 * To compile and package the project,

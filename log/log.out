@@ -1,0 +1,573 @@
+Changing view acls to: renq
+Changing modify acls to: renq
+SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(renq); users with modify permissions: Set(renq)
+In createActorSystem, requireCookie is: off
+Slf4jLogger started
+Starting remoting
+Remoting started; listening on addresses :[akka.tcp://sparkDriver@cluster01:34388]
+Remoting now listens on addresses: [akka.tcp://sparkDriver@cluster01:34388]
+Successfully started service 'sparkDriver' on port 34388.
+Using serializer: class org.apache.spark.serializer.JavaSerializer
+Registering MapOutputTracker
+Registering BlockManagerMaster
+[actor] received message ExpireDeadHosts from Actor[akka://sparkDriver/user/BlockManagerMaster#31969857]
+[actor] handled message (1.403184 ms) ExpireDeadHosts from Actor[akka://sparkDriver/user/BlockManagerMaster#31969857]
+Getting/creating local root dirs at '/tmp'
+Created local directory at /tmp/spark-local-20150123125145-16fb
+Using SLF4J as the default logging framework
+-Dio.netty.leakDetectionLevel: simple
+java.nio.Buffer.address: available
+sun.misc.Unsafe.theUnsafe: available
+sun.misc.Unsafe.copyMemory: available
+java.nio.Bits.unaligned: true
+UID: 1002
+Java version: 7
+-Dio.netty.noUnsafe: false
+sun.misc.Unsafe: available
+-Dio.netty.noJavassist: false
+Javassist: unavailable
+You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+-Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+-Dio.netty.bitMode: 64 (sun.arch.data.model)
+-Dio.netty.noPreferDirect: false
+Successfully started service 'Connection manager for block manager' on port 44766.
+Bound socket to port 44766 with id = ConnectionManagerId(cluster01,44766)
+MemoryStore started with capacity 3.6 GB
+Trying to register BlockManager
+[actor] received message RegisterBlockManager(BlockManagerId(<driver>, cluster01, 44766, 0),3890007244,Actor[akka://sparkDriver/user/BlockManagerActor1#-372687943]) from Actor[akka://sparkDriver/temp/$a]
+Registering block manager cluster01:44766 with 3.6 GB RAM, BlockManagerId(<driver>, cluster01, 44766, 0)
+[actor] handled message (1.96327 ms) RegisterBlockManager(BlockManagerId(<driver>, cluster01, 44766, 0),3890007244,Actor[akka://sparkDriver/user/BlockManagerActor1#-372687943]) from Actor[akka://sparkDriver/temp/$a]
+Registered BlockManager
+HTTP File server directory is /tmp/spark-ec65adc7-d85f-4cca-b609-28ae64d52fb0
+Starting HTTP Server
+HttpServer is not using security
+Successfully started service 'HTTP file server' on port 46030.
+HTTP file server started at: http://192.168.2.1:46030
+Successfully started service 'SparkUI' on port 4040.
+Started SparkUI at http://cluster01:4040
+field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, value=[Rate of successful kerberos logins and latency (milliseconds)], about=, always=false, type=DEFAULT, sampleName=Ops)
+field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, value=[Rate of failed kerberos logins and latency (milliseconds)], about=, always=false, type=DEFAULT, sampleName=Ops)
+field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, value=[GetGroups], about=, always=false, type=DEFAULT, sampleName=Ops)
+UgiMetrics, User and group related metrics
+Kerberos krb5 configuration not found, setting default realm to empty
+ Creating new Groups object
+Trying to load the custom-built native-hadoop library...
+Failed to load native-hadoop with error: java.lang.UnsatisfiedLinkError: no hadoop in java.library.path
+java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Falling back to shell based
+Group mapping impl=org.apache.hadoop.security.ShellBasedUnixGroupsMapping
+Failed to detect a valid hadoop home directory
+java.io.IOException: HADOOP_HOME or hadoop.home.dir are not set.
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:265)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:290)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:76)
+	at org.apache.hadoop.security.Groups.parseStaticMapping(Groups.java:93)
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:77)
+	at org.apache.hadoop.security.Groups.getUserToGroupsMappingService(Groups.java:240)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:255)
+	at org.apache.hadoop.security.UserGroupInformation.setConfiguration(UserGroupInformation.java:283)
+	at org.apache.spark.deploy.SparkHadoopUtil.<init>(SparkHadoopUtil.scala:36)
+	at org.apache.spark.deploy.SparkHadoopUtil$.<init>(SparkHadoopUtil.scala:109)
+	at org.apache.spark.deploy.SparkHadoopUtil$.<clinit>(SparkHadoopUtil.scala)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:238)
+	at Toughness$.main(toughness.scala:12)
+	at Toughness.main(toughness.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.spark.deploy.SparkSubmit$.launch(SparkSubmit.scala:329)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:75)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+setsid exited with exit code 0
+Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+Added JAR file:/home/renq/k-tough/target/scala-2.10/toughness_2.10-1.0.jar at http://192.168.2.1:46030/jars/toughness_2.10-1.0.jar with timestamp 1421988706150
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] handled message (9.973659 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+Connecting to master spark://cluster01:7077...
+SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+ensureFreeSpace(163705) called with curMem=0, maxMem=3890007244
+Block broadcast_0 stored as values in memory (estimated size 159.9 KB, free 3.6 GB)
+Put block broadcast_0 locally took  162 ms
+Putting block broadcast_0 without replication took  163 ms
+[actor] received message RegisteredApplication(app-20150123125146-0005,spark://cluster01:7077) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+Connected to Spark cluster with app ID app-20150123125146-0005
+[actor] handled message (0.868171 ms) RegisteredApplication(app-20150123125146-0005,spark://cluster01:7077) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+[actor] received message ExecutorAdded(0,worker-20150121184032-cluster02-48233,cluster02:48233,2,6144) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+Executor added: app-20150123125146-0005/0 on worker-20150121184032-cluster02-48233 (cluster02:48233) with 2 cores
+Granted executor ID app-20150123125146-0005/0 on hostPort cluster02:48233 with 2 cores, 6.0 GB RAM
+[actor] handled message (1.366775 ms) ExecutorAdded(0,worker-20150121184032-cluster02-48233,cluster02:48233,2,6144) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+[actor] received message ExecutorAdded(1,worker-20150121184029-cluster01-58596,cluster01:58596,2,6144) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+Executor added: app-20150123125146-0005/1 on worker-20150121184029-cluster01-58596 (cluster01:58596) with 2 cores
+Granted executor ID app-20150123125146-0005/1 on hostPort cluster01:58596 with 2 cores, 6.0 GB RAM
+[actor] handled message (0.415977 ms) ExecutorAdded(1,worker-20150121184029-cluster01-58596,cluster01:58596,2,6144) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+[actor] received message ExecutorAdded(2,worker-20150121184032-cluster03-48380,cluster03:48380,2,6144) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+Executor added: app-20150123125146-0005/2 on worker-20150121184032-cluster03-48380 (cluster03:48380) with 2 cores
+Granted executor ID app-20150123125146-0005/2 on hostPort cluster03:48380 with 2 cores, 6.0 GB RAM
+[actor] handled message (0.452134 ms) ExecutorAdded(2,worker-20150121184032-cluster03-48380,cluster03:48380,2,6144) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+[actor] received message ExecutorUpdated(0,LOADING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+Executor updated: app-20150123125146-0005/0 is now LOADING
+[actor] handled message (0.992603 ms) ExecutorUpdated(0,LOADING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+[actor] received message ExecutorUpdated(2,LOADING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+Executor updated: app-20150123125146-0005/2 is now LOADING
+[actor] handled message (0.181921 ms) ExecutorUpdated(2,LOADING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+[actor] received message ExecutorUpdated(1,LOADING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+Executor updated: app-20150123125146-0005/1 is now LOADING
+[actor] handled message (0.191553 ms) ExecutorUpdated(1,LOADING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+ensureFreeSpace(12633) called with curMem=163705, maxMem=3890007244
+Block broadcast_0_piece0 stored as bytes in memory (estimated size 12.3 KB, free 3.6 GB)
+[actor] received message UpdateBlockInfo(BlockManagerId(<driver>, cluster01, 44766, 0),broadcast_0_piece0,StorageLevel(false, true, false, false, 1),12633,0,0) from Actor[akka://sparkDriver/temp/$b]
+Added broadcast_0_piece0 in memory on cluster01:44766 (size: 12.3 KB, free: 3.6 GB)
+[actor] handled message (1.163253 ms) UpdateBlockInfo(BlockManagerId(<driver>, cluster01, 44766, 0),broadcast_0_piece0,StorageLevel(false, true, false, false, 1),12633,0,0) from Actor[akka://sparkDriver/temp/$b]
+Updated info of block broadcast_0_piece0
+Told master about block broadcast_0_piece0
+Put block broadcast_0_piece0 locally took  7 ms
+Putting block broadcast_0_piece0 without replication took  7 ms
+Creating new JobConf and caching it for later re-use
+hadoop login
+hadoop login commit
+using local user:UnixPrincipal: renq
+UGI loginUser:renq (auth:SIMPLE)
+Time taken to get FileStatuses: 4
+Total input paths to process : 1
+Total # of splits generated by getSplits: 3, TimeTaken: 9
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@6bddea9) from Actor[akka://sparkDriver/temp/$c]
+[actor] handled message (0.568825 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@6bddea9) from Actor[akka://sparkDriver/temp/$c]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@2ddc63f6) from Actor[akka://sparkDriver/temp/$d]
+[actor] handled message (0.167582 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@2ddc63f6) from Actor[akka://sparkDriver/temp/$d]
+Starting job: count at GraphLoader.scala:87
+Got job 0 (count at GraphLoader.scala:87) with 1 output partitions (allowLocal=false)
+Final stage: Stage 0(count at GraphLoader.scala:87)
+Parents of final stage: List()
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@ebc21da) from Actor[akka://sparkDriver/temp/$e]
+[actor] handled message (0.135143 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@ebc21da) from Actor[akka://sparkDriver/temp/$e]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@728b5f94) from Actor[akka://sparkDriver/temp/$f]
+[actor] handled message (0.140583 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@728b5f94) from Actor[akka://sparkDriver/temp/$f]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@1c30284c) from Actor[akka://sparkDriver/temp/$g]
+[actor] handled message (0.133402 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@1c30284c) from Actor[akka://sparkDriver/temp/$g]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@1da5a409) from Actor[akka://sparkDriver/temp/$h]
+[actor] handled message (0.132155 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@1da5a409) from Actor[akka://sparkDriver/temp/$h]
+Missing parents: List()
+submitStage(Stage 0)
+missing: List()
+Submitting Stage 0 (GraphLoader.edgeListFile - edges (/home/hadoop/data/roadNet-CA.txt) MapPartitionsRDD[3] at mapPartitionsWithIndex at GraphLoader.scala:68), which has no missing parents
+submitMissingTasks(Stage 0)
+ensureFreeSpace(3120) called with curMem=176338, maxMem=3890007244
+Block broadcast_1 stored as values in memory (estimated size 3.0 KB, free 3.6 GB)
+Put block broadcast_1 locally took  2 ms
+Putting block broadcast_1 without replication took  2 ms
+ensureFreeSpace(1887) called with curMem=179458, maxMem=3890007244
+Block broadcast_1_piece0 stored as bytes in memory (estimated size 1887.0 B, free 3.6 GB)
+[actor] received message UpdateBlockInfo(BlockManagerId(<driver>, cluster01, 44766, 0),broadcast_1_piece0,StorageLevel(false, true, false, false, 1),1887,0,0) from Actor[akka://sparkDriver/temp/$i]
+Added broadcast_1_piece0 in memory on cluster01:44766 (size: 1887.0 B, free: 3.6 GB)
+[actor] handled message (0.402563 ms) UpdateBlockInfo(BlockManagerId(<driver>, cluster01, 44766, 0),broadcast_1_piece0,StorageLevel(false, true, false, false, 1),1887,0,0) from Actor[akka://sparkDriver/temp/$i]
+Updated info of block broadcast_1_piece0
+Told master about block broadcast_1_piece0
+Put block broadcast_1_piece0 locally took  2 ms
+Putting block broadcast_1_piece0 without replication took  2 ms
+Submitting 1 missing tasks from Stage 0 (GraphLoader.edgeListFile - edges (/home/hadoop/data/roadNet-CA.txt) MapPartitionsRDD[3] at mapPartitionsWithIndex at GraphLoader.scala:68)
+New pending tasks: Set(ResultTask(0, 0))
+Adding task set 0.0 with 1 tasks
+Epoch for TaskSet 0.0: 0
+Valid locality levels for TaskSet 0.0: ANY
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/deadLetters]
+parentName: , name: TaskSet_0, runningTasks: 0
+[actor] handled message (2.017194 ms) ReviveOffers from Actor[akka://sparkDriver/deadLetters]
+[actor] received message ExecutorUpdated(0,RUNNING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+Executor updated: app-20150123125146-0005/0 is now RUNNING
+[actor] handled message (0.23522 ms) ExecutorUpdated(0,RUNNING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+[actor] received message ExecutorUpdated(2,RUNNING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+Executor updated: app-20150123125146-0005/2 is now RUNNING
+[actor] handled message (0.192672 ms) ExecutorUpdated(2,RUNNING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+[actor] received message ExecutorUpdated(1,RUNNING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+Executor updated: app-20150123125146-0005/1 is now RUNNING
+[actor] handled message (0.17559 ms) ExecutorUpdated(1,RUNNING,None,None) from Actor[akka.tcp://sparkMaster@cluster01:7077/user/Master#-1182251110]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_0, runningTasks: 0
+[actor] handled message (0.436586 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_0, runningTasks: 0
+[actor] handled message (0.486405 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] received message RetrieveSparkProps from Actor[akka.tcp://driverPropsFetcher@cluster02:48948/temp/$a]
+[actor] handled message (0.053757 ms) RetrieveSparkProps from Actor[akka.tcp://driverPropsFetcher@cluster02:48948/temp/$a]
+[actor] received message RetrieveSparkProps from Actor[akka.tcp://driverPropsFetcher@cluster03:38435/temp/$a]
+[actor] handled message (0.024217 ms) RetrieveSparkProps from Actor[akka.tcp://driverPropsFetcher@cluster03:38435/temp/$a]
+[actor] received message Disassociated [akka.tcp://sparkDriver@cluster01:34388] <- [akka.tcp://driverPropsFetcher@cluster02:48948] from Actor[akka://sparkDriver/deadLetters]
+[actor] handled message (0.437971 ms) Disassociated [akka.tcp://sparkDriver@cluster01:34388] <- [akka.tcp://driverPropsFetcher@cluster02:48948] from Actor[akka://sparkDriver/deadLetters]
+[actor] received message Disassociated [akka.tcp://sparkDriver@cluster01:34388] <- [akka.tcp://driverPropsFetcher@cluster03:38435] from Actor[akka://sparkDriver/deadLetters]
+[actor] handled message (0.019753 ms) Disassociated [akka.tcp://sparkDriver@cluster01:34388] <- [akka.tcp://driverPropsFetcher@cluster03:38435] from Actor[akka://sparkDriver/deadLetters]
+[actor] received message RegisterExecutor(0,cluster02:44086,2) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+Registered executor: Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822] with ID 0
+parentName: , name: TaskSet_0, runningTasks: 0
+Valid locality levels for TaskSet 0.0: ANY
+Starting task 0.0 in stage 0.0 (TID 0, cluster02, ANY, 1903 bytes)
+[actor] handled message (16.003856 ms) RegisterExecutor(0,cluster02:44086,2) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+[actor] received message RetrieveSparkProps from Actor[akka.tcp://driverPropsFetcher@cluster01:40005/temp/$a]
+[actor] handled message (0.021376 ms) RetrieveSparkProps from Actor[akka.tcp://driverPropsFetcher@cluster01:40005/temp/$a]
+[actor] received message Disassociated [akka.tcp://sparkDriver@cluster01:34388] <- [akka.tcp://driverPropsFetcher@cluster01:40005] from Actor[akka://sparkDriver/deadLetters]
+[actor] handled message (0.016388 ms) Disassociated [akka.tcp://sparkDriver@cluster01:34388] <- [akka.tcp://driverPropsFetcher@cluster01:40005] from Actor[akka://sparkDriver/deadLetters]
+[actor] received message RegisterExecutor(2,cluster03:33413,2) from Actor[akka.tcp://sparkExecutor@cluster03:33413/user/Executor#-1722066066]
+Registered executor: Actor[akka.tcp://sparkExecutor@cluster03:33413/user/Executor#-1722066066] with ID 2
+parentName: , name: TaskSet_0, runningTasks: 1
+Valid locality levels for TaskSet 0.0: ANY
+[actor] handled message (1.590057 ms) RegisterExecutor(2,cluster03:33413,2) from Actor[akka.tcp://sparkExecutor@cluster03:33413/user/Executor#-1722066066]
+[actor] received message RegisterBlockManager(BlockManagerId(0, cluster02, 45239, 0),3333968363,Actor[akka.tcp://sparkExecutor@cluster02:33470/user/BlockManagerActor1#-1552833137]) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$c]
+Registering block manager cluster02:45239 with 3.1 GB RAM, BlockManagerId(0, cluster02, 45239, 0)
+[actor] received message RegisterExecutor(1,cluster01:39887,2) from Actor[akka.tcp://sparkExecutor@cluster01:39887/user/Executor#748518448]
+Registered executor: Actor[akka.tcp://sparkExecutor@cluster01:39887/user/Executor#748518448] with ID 1
+parentName: , name: TaskSet_0, runningTasks: 1
+Valid locality levels for TaskSet 0.0: ANY
+[actor] handled message (1.175806 ms) RegisterExecutor(1,cluster01:39887,2) from Actor[akka.tcp://sparkExecutor@cluster01:39887/user/Executor#748518448]
+[actor] handled message (2.589869 ms) RegisterBlockManager(BlockManagerId(0, cluster02, 45239, 0),3333968363,Actor[akka.tcp://sparkExecutor@cluster02:33470/user/BlockManagerActor1#-1552833137]) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$c]
+[actor] received message RegisterBlockManager(BlockManagerId(2, cluster03, 33147, 0),3333968363,Actor[akka.tcp://sparkExecutor@cluster03:52358/user/BlockManagerActor1#-177854557]) from Actor[akka.tcp://sparkExecutor@cluster03:52358/temp/$c]
+Registering block manager cluster03:33147 with 3.1 GB RAM, BlockManagerId(2, cluster03, 33147, 0)
+[actor] handled message (1.447772 ms) RegisterBlockManager(BlockManagerId(2, cluster03, 33147, 0),3333968363,Actor[akka.tcp://sparkExecutor@cluster03:52358/user/BlockManagerActor1#-177854557]) from Actor[akka.tcp://sparkExecutor@cluster03:52358/temp/$c]
+[actor] received message StatusUpdate(0,0,RUNNING,org.apache.spark.util.SerializableBuffer@3974a83a) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+[actor] handled message (0.552171 ms) StatusUpdate(0,0,RUNNING,org.apache.spark.util.SerializableBuffer@3974a83a) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+[actor] received message RegisterBlockManager(BlockManagerId(1, cluster01, 37403, 0),3333968363,Actor[akka.tcp://sparkExecutor@cluster01:45759/user/BlockManagerActor1#-1749333963]) from Actor[akka.tcp://sparkExecutor@cluster01:45759/temp/$c]
+Registering block manager cluster01:37403 with 3.1 GB RAM, BlockManagerId(1, cluster01, 37403, 0)
+[actor] handled message (0.474165 ms) RegisterBlockManager(BlockManagerId(1, cluster01, 37403, 0),3333968363,Actor[akka.tcp://sparkExecutor@cluster01:45759/user/BlockManagerActor1#-1749333963]) from Actor[akka.tcp://sparkExecutor@cluster01:45759/temp/$c]
+[actor] received message GetLocations(broadcast_1_piece0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$e]
+[actor] handled message (0.104941 ms) GetLocations(broadcast_1_piece0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$e]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_0, runningTasks: 1
+[actor] handled message (0.614842 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+Accepted connection from [cluster02/192.168.2.2:33292]
+Selector selected 0 of 2 keys
+Starting to receive [BufferMessage(id = 3, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Finished receiving [BufferMessage(id = 3, size = 48)] from [ConnectionManagerId(cluster02,45239)] in 2 ms
+Received [BufferMessage(id = 3, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Selector selected 0 of 2 keys
+Handler thread delay is 11 ms
+Handling [BufferMessage(id = 3, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Calling back
+Handling message BufferMessage(id = 3, size = 48)
+Handling as a buffer message BufferMessage(id = 3, size = 48)
+Creating block message of size 44 bytes
+Trying to convert buffer java.nio.HeapByteBuffer[pos=0 lim=44 cap=44] to block message
+Created BlockMessage [type = 1, id = broadcast_1_piece0, level = null, data = null]
+Converted block message array from buffer message in 0.009 s
+Parsed as a block message array
+Received [GetBlock(broadcast_1_piece0)]
+GetBlock broadcast_1_piece0 started from 1421988709293
+Getting local block broadcast_1_piece0 as bytes
+Level for block broadcast_1_piece0 is StorageLevel(true, true, false, false, 1)
+Getting block broadcast_1_piece0 from memory
+GetBlock broadcast_1_piece0 used  2 ms and got buffer java.nio.HeapByteBuffer[pos=0 lim=1887 cap=1887]
+Adding BlockMessage [type = 2, id = broadcast_1_piece0, level = null, data = 1887]
+Added BufferMessage(id = 2, size = 1935)
+Buffer list:
+java.nio.HeapByteBuffer[pos=0 lim=4 cap=4]
+java.nio.HeapByteBuffer[pos=0 lim=44 cap=44]
+java.nio.HeapByteBuffer[pos=0 lim=4 cap=4]
+java.nio.HeapByteBuffer[pos=0 lim=1887 cap=1887]
+Response to BufferMessage(id = 3, size = 48) does not have ack id set
+Before Sending [BufferAckMessage(aid = 3, id = 3, size = 1939)] to [ConnectionManagerId(cluster02,45239)] connectionid: cluster01_44766_2
+Sending [BufferAckMessage(aid = 3, id = 3, size = 1939)] to [ConnectionManagerId(cluster02,45239)]
+Added [BufferAckMessage(aid = 3, id = 3, size = 1939)] to outbox for sending to [ConnectionManagerId(cluster02,45239)]
+Selector selected 0 of 2 keys
+Handling delay is 56 ms
+Initiating connection to [cluster02/192.168.2.2:45239]
+Selector selected 0 of 3 keys
+Selector selected 0 of 3 keys
+Connected to [cluster02/192.168.2.2:45239], 1 messages pending
+Selector selected 0 of 3 keys
+Starting to send [BufferAckMessage(aid = 3, id = 3, size = 1939)] to [ConnectionManagerId(cluster02,45239)]
+Finished sending [BufferAckMessage(aid = 3, id = 3, size = 1939)] to [ConnectionManagerId(cluster02,45239)] in 1 ms
+[actor] received message UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),broadcast_1_piece0,StorageLevel(false, true, false, false, 1),1887,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$f]
+Added broadcast_1_piece0 in memory on cluster02:45239 (size: 1887.0 B, free: 3.1 GB)
+[actor] handled message (0.426456 ms) UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),broadcast_1_piece0,StorageLevel(false, true, false, false, 1),1887,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$f]
+[actor] received message GetLocations(broadcast_0_piece0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$g]
+[actor] handled message (0.093124 ms) GetLocations(broadcast_0_piece0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$g]
+Selector selected 0 of 3 keys
+Starting to receive [BufferMessage(id = 5, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Finished receiving [BufferMessage(id = 5, size = 48)] from [ConnectionManagerId(cluster02,45239)] in 1 ms
+Received [BufferMessage(id = 5, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Selector selected 0 of 3 keys
+Handler thread delay is 0 ms
+Handling [BufferMessage(id = 5, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Calling back
+Handling message BufferMessage(id = 5, size = 48)
+Handling as a buffer message BufferMessage(id = 5, size = 48)
+Creating block message of size 44 bytes
+Trying to convert buffer java.nio.HeapByteBuffer[pos=0 lim=44 cap=44] to block message
+Created BlockMessage [type = 1, id = broadcast_0_piece0, level = null, data = null]
+Converted block message array from buffer message in 0.0 s
+Parsed as a block message array
+Received [GetBlock(broadcast_0_piece0)]
+GetBlock broadcast_0_piece0 started from 1421988709412
+Getting local block broadcast_0_piece0 as bytes
+Level for block broadcast_0_piece0 is StorageLevel(true, true, false, false, 1)
+Getting block broadcast_0_piece0 from memory
+GetBlock broadcast_0_piece0 used  0 ms and got buffer java.nio.HeapByteBuffer[pos=0 lim=12633 cap=12633]
+Adding BlockMessage [type = 2, id = broadcast_0_piece0, level = null, data = 12633]
+Added BufferMessage(id = 4, size = 12681)
+Buffer list:
+java.nio.HeapByteBuffer[pos=0 lim=4 cap=4]
+java.nio.HeapByteBuffer[pos=0 lim=44 cap=44]
+java.nio.HeapByteBuffer[pos=0 lim=4 cap=4]
+java.nio.HeapByteBuffer[pos=0 lim=12633 cap=12633]
+Response to BufferMessage(id = 5, size = 48) does not have ack id set
+Before Sending [BufferAckMessage(aid = 5, id = 5, size = 12685)] to [ConnectionManagerId(cluster02,45239)] connectionid: cluster01_44766_2
+Sending [BufferAckMessage(aid = 5, id = 5, size = 12685)] to [ConnectionManagerId(cluster02,45239)]
+Added [BufferAckMessage(aid = 5, id = 5, size = 12685)] to outbox for sending to [ConnectionManagerId(cluster02,45239)]
+Selector selected 0 of 3 keys
+Selector selected 0 of 3 keys
+Handling delay is 2 ms
+Starting to send [BufferAckMessage(aid = 5, id = 5, size = 12685)] to [ConnectionManagerId(cluster02,45239)]
+Finished sending [BufferAckMessage(aid = 5, id = 5, size = 12685)] to [ConnectionManagerId(cluster02,45239)] in 0 ms
+[actor] received message UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),broadcast_0_piece0,StorageLevel(false, true, false, false, 1),12633,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$h]
+Added broadcast_0_piece0 in memory on cluster02:45239 (size: 12.3 KB, free: 3.1 GB)
+[actor] handled message (0.471028 ms) UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),broadcast_0_piece0,StorageLevel(false, true, false, false, 1),12633,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$h]
+[actor] received message GetLocations(rdd_3_0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$i]
+[actor] handled message (0.038214 ms) GetLocations(rdd_3_0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$i]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_0, runningTasks: 1
+[actor] handled message (0.642417 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_0, runningTasks: 1
+[actor] handled message (0.805515 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_0, runningTasks: 1
+[actor] handled message (0.599731 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_0, runningTasks: 1
+[actor] handled message (0.616781 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_0, runningTasks: 1
+[actor] handled message (0.575142 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_0, runningTasks: 1
+[actor] handled message (0.606219 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_0, runningTasks: 1
+[actor] handled message (0.604815 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] received message UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),rdd_3_0,StorageLevel(false, true, false, true, 1),212376952,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$j]
+Added rdd_3_0 in memory on cluster02:45239 (size: 202.5 MB, free: 2.9 GB)
+[actor] handled message (0.763903 ms) UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),rdd_3_0,StorageLevel(false, true, false, true, 1),212376952,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$j]
+[actor] received message StatusUpdate(0,0,FINISHED,org.apache.spark.util.SerializableBuffer@4cf3a603) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+parentName: , name: TaskSet_0, runningTasks: 0
+[actor] handled message (0.962513 ms) StatusUpdate(0,0,FINISHED,org.apache.spark.util.SerializableBuffer@4cf3a603) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+Stage 0 (count at GraphLoader.scala:87) finished in 9.444 s
+After removal of stage 0, remaining stages = 0
+Job finished: count at GraphLoader.scala:87, took 9.519106668 s
+Finished task 0.0 in stage 0.0 (TID 0) in 7688 ms on cluster02 (1/1)
+Removed TaskSet 0.0, whose tasks have all completed, from pool 
+It took 10068 ms to load the edges
+Starting job: reduce at VertexRDD.scala:111
+Registering RDD 6 (mapPartitions at VertexRDD.scala:452)
+Got job 1 (reduce at VertexRDD.scala:111) with 1 output partitions (allowLocal=false)
+Final stage: Stage 1(reduce at VertexRDD.scala:111)
+Parents of final stage: List(Stage 2)
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@2a23741b) from Actor[akka://sparkDriver/temp/$j]
+[actor] handled message (0.086818 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@2a23741b) from Actor[akka://sparkDriver/temp/$j]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@7d9bae39) from Actor[akka://sparkDriver/temp/$k]
+[actor] handled message (0.075024 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@7d9bae39) from Actor[akka://sparkDriver/temp/$k]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@77cb609b) from Actor[akka://sparkDriver/temp/$l]
+[actor] handled message (0.07089 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@77cb609b) from Actor[akka://sparkDriver/temp/$l]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@49339d8e) from Actor[akka://sparkDriver/temp/$m]
+[actor] handled message (0.066899 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@49339d8e) from Actor[akka://sparkDriver/temp/$m]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@5bacfb2d) from Actor[akka://sparkDriver/temp/$n]
+[actor] handled message (0.06566 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@5bacfb2d) from Actor[akka://sparkDriver/temp/$n]
+Missing parents: List(Stage 2)
+submitStage(Stage 1)
+missing: List(Stage 2)
+submitStage(Stage 2)
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@6dd938f0) from Actor[akka://sparkDriver/temp/$o]
+[actor] handled message (0.06682 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@6dd938f0) from Actor[akka://sparkDriver/temp/$o]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@50294ce7) from Actor[akka://sparkDriver/temp/$p]
+[actor] handled message (0.124582 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@50294ce7) from Actor[akka://sparkDriver/temp/$p]
+missing: List()
+Submitting Stage 2 (VertexRDD.createRoutingTables - vid2pid (aggregation) MapPartitionsRDD[6] at mapPartitions at VertexRDD.scala:452), which has no missing parents
+submitMissingTasks(Stage 2)
+ensureFreeSpace(3816) called with curMem=181345, maxMem=3890007244
+Block broadcast_2 stored as values in memory (estimated size 3.7 KB, free 3.6 GB)
+Put block broadcast_2 locally took  1 ms
+Putting block broadcast_2 without replication took  1 ms
+ensureFreeSpace(2263) called with curMem=185161, maxMem=3890007244
+Block broadcast_2_piece0 stored as bytes in memory (estimated size 2.2 KB, free 3.6 GB)
+[actor] received message UpdateBlockInfo(BlockManagerId(<driver>, cluster01, 44766, 0),broadcast_2_piece0,StorageLevel(false, true, false, false, 1),2263,0,0) from Actor[akka://sparkDriver/temp/$q]
+Added broadcast_2_piece0 in memory on cluster01:44766 (size: 2.2 KB, free: 3.6 GB)
+[actor] handled message (0.347629 ms) UpdateBlockInfo(BlockManagerId(<driver>, cluster01, 44766, 0),broadcast_2_piece0,StorageLevel(false, true, false, false, 1),2263,0,0) from Actor[akka://sparkDriver/temp/$q]
+Updated info of block broadcast_2_piece0
+Told master about block broadcast_2_piece0
+Put block broadcast_2_piece0 locally took  1 ms
+Putting block broadcast_2_piece0 without replication took  1 ms
+Submitting 1 missing tasks from Stage 2 (VertexRDD.createRoutingTables - vid2pid (aggregation) MapPartitionsRDD[6] at mapPartitions at VertexRDD.scala:452)
+New pending tasks: Set(ShuffleMapTask(2, 0))
+Adding task set 2.0 with 1 tasks
+Epoch for TaskSet 2.0: 0
+Valid locality levels for TaskSet 2.0: PROCESS_LOCAL, NODE_LOCAL, ANY
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/deadLetters]
+submitStage(Stage 1)
+missing: List(Stage 2)
+submitStage(Stage 2)
+parentName: , name: TaskSet_2, runningTasks: 0
+Starting task 0.0 in stage 2.0 (TID 1, cluster02, PROCESS_LOCAL, 1892 bytes)
+submitStage(Stage 1)
+[actor] handled message (2.706715 ms) ReviveOffers from Actor[akka://sparkDriver/deadLetters]
+missing: List(Stage 2)
+submitStage(Stage 2)
+[actor] received message StatusUpdate(0,1,RUNNING,org.apache.spark.util.SerializableBuffer@2f62013e) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+[actor] handled message (0.042329 ms) StatusUpdate(0,1,RUNNING,org.apache.spark.util.SerializableBuffer@2f62013e) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+[actor] received message GetLocations(broadcast_2_piece0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$k]
+[actor] handled message (0.108155 ms) GetLocations(broadcast_2_piece0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$k]
+Selector selected 0 of 3 keys
+Starting to receive [BufferMessage(id = 7, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Finished receiving [BufferMessage(id = 7, size = 48)] from [ConnectionManagerId(cluster02,45239)] in 1 ms
+Received [BufferMessage(id = 7, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Selector selected 0 of 3 keys
+Handler thread delay is 0 ms
+Handling [BufferMessage(id = 7, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Calling back
+Handling message BufferMessage(id = 7, size = 48)
+Handling as a buffer message BufferMessage(id = 7, size = 48)
+Creating block message of size 44 bytes
+Trying to convert buffer java.nio.HeapByteBuffer[pos=0 lim=44 cap=44] to block message
+Created BlockMessage [type = 1, id = broadcast_2_piece0, level = null, data = null]
+Converted block message array from buffer message in 0.0 s
+Parsed as a block message array
+Received [GetBlock(broadcast_2_piece0)]
+GetBlock broadcast_2_piece0 started from 1421988716495
+Getting local block broadcast_2_piece0 as bytes
+Level for block broadcast_2_piece0 is StorageLevel(true, true, false, false, 1)
+Getting block broadcast_2_piece0 from memory
+GetBlock broadcast_2_piece0 used  0 ms and got buffer java.nio.HeapByteBuffer[pos=0 lim=2263 cap=2263]
+Adding BlockMessage [type = 2, id = broadcast_2_piece0, level = null, data = 2263]
+Added BufferMessage(id = 6, size = 2311)
+Buffer list:
+java.nio.HeapByteBuffer[pos=0 lim=4 cap=4]
+java.nio.HeapByteBuffer[pos=0 lim=44 cap=44]
+java.nio.HeapByteBuffer[pos=0 lim=4 cap=4]
+java.nio.HeapByteBuffer[pos=0 lim=2263 cap=2263]
+Response to BufferMessage(id = 7, size = 48) does not have ack id set
+Before Sending [BufferAckMessage(aid = 7, id = 7, size = 2315)] to [ConnectionManagerId(cluster02,45239)] connectionid: cluster01_44766_2
+Sending [BufferAckMessage(aid = 7, id = 7, size = 2315)] to [ConnectionManagerId(cluster02,45239)]
+Added [BufferAckMessage(aid = 7, id = 7, size = 2315)] to outbox for sending to [ConnectionManagerId(cluster02,45239)]
+Selector selected 0 of 3 keys
+Selector selected 0 of 3 keys
+Starting to send [BufferAckMessage(aid = 7, id = 7, size = 2315)] to [ConnectionManagerId(cluster02,45239)]
+Selector selected 0 of 3 keys
+Handling delay is 3 ms
+Finished sending [BufferAckMessage(aid = 7, id = 7, size = 2315)] to [ConnectionManagerId(cluster02,45239)] in 0 ms
+[actor] received message UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),broadcast_2_piece0,StorageLevel(false, true, false, false, 1),2263,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$l]
+Added broadcast_2_piece0 in memory on cluster02:45239 (size: 2.2 KB, free: 2.9 GB)
+[actor] handled message (0.605803 ms) UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),broadcast_2_piece0,StorageLevel(false, true, false, false, 1),2263,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$l]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_2, runningTasks: 1
+[actor] handled message (0.693228 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] received message StatusUpdate(0,1,FINISHED,org.apache.spark.util.SerializableBuffer@5373be4a) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+parentName: , name: TaskSet_2, runningTasks: 0
+[actor] handled message (0.609267 ms) StatusUpdate(0,1,FINISHED,org.apache.spark.util.SerializableBuffer@5373be4a) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+ShuffleMapTask finished on 0
+Stage 2 (mapPartitions at VertexRDD.scala:452) finished in 1.690 s
+looking for newly runnable stages
+Finished task 0.0 in stage 2.0 (TID 1) in 1689 ms on cluster02 (1/1)
+running: Set()
+Removed TaskSet 2.0, whose tasks have all completed, from pool 
+waiting: Set(Stage 1)
+failed: Set()
+Increasing epoch to 1
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@6468836) from Actor[akka://sparkDriver/temp/$r]
+[actor] handled message (0.081719 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@6468836) from Actor[akka://sparkDriver/temp/$r]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@989472) from Actor[akka://sparkDriver/temp/$s]
+[actor] handled message (0.059575 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@989472) from Actor[akka://sparkDriver/temp/$s]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@2139c8ac) from Actor[akka://sparkDriver/temp/$t]
+[actor] handled message (0.058851 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@2139c8ac) from Actor[akka://sparkDriver/temp/$t]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@58a5a53e) from Actor[akka://sparkDriver/temp/$u]
+[actor] handled message (0.060574 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@58a5a53e) from Actor[akka://sparkDriver/temp/$u]
+[actor] received message GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@6303b6e9) from Actor[akka://sparkDriver/temp/$v]
+[actor] handled message (0.057353 ms) GetLocationsMultipleBlockIds([Lorg.apache.spark.storage.BlockId;@6303b6e9) from Actor[akka://sparkDriver/temp/$v]
+Missing parents for Stage 1: List()
+Submitting Stage 1 (MappedRDD[27] at map at VertexRDD.scala:111), which is now runnable
+submitMissingTasks(Stage 1)
+ensureFreeSpace(4168) called with curMem=187424, maxMem=3890007244
+Block broadcast_3 stored as values in memory (estimated size 4.1 KB, free 3.6 GB)
+Put block broadcast_3 locally took  1 ms
+Putting block broadcast_3 without replication took  1 ms
+ensureFreeSpace(2251) called with curMem=191592, maxMem=3890007244
+Block broadcast_3_piece0 stored as bytes in memory (estimated size 2.2 KB, free 3.6 GB)
+[actor] received message UpdateBlockInfo(BlockManagerId(<driver>, cluster01, 44766, 0),broadcast_3_piece0,StorageLevel(false, true, false, false, 1),2251,0,0) from Actor[akka://sparkDriver/temp/$w]
+Added broadcast_3_piece0 in memory on cluster01:44766 (size: 2.2 KB, free: 3.6 GB)
+Updated info of block broadcast_3_piece0
+[actor] handled message (0.336892 ms) UpdateBlockInfo(BlockManagerId(<driver>, cluster01, 44766, 0),broadcast_3_piece0,StorageLevel(false, true, false, false, 1),2251,0,0) from Actor[akka://sparkDriver/temp/$w]
+Told master about block broadcast_3_piece0
+Put block broadcast_3_piece0 locally took  1 ms
+Putting block broadcast_3_piece0 without replication took  1 ms
+Submitting 1 missing tasks from Stage 1 (MappedRDD[27] at map at VertexRDD.scala:111)
+New pending tasks: Set(ResultTask(1, 0))
+Adding task set 1.0 with 1 tasks
+Epoch for TaskSet 1.0: 1
+Valid locality levels for TaskSet 1.0: NO_PREF, ANY
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/deadLetters]
+parentName: , name: TaskSet_1, runningTasks: 0
+Starting task 0.0 in stage 1.0 (TID 2, cluster02, PROCESS_LOCAL, 1055 bytes)
+[actor] handled message (1.260866 ms) ReviveOffers from Actor[akka://sparkDriver/deadLetters]
+[actor] received message StatusUpdate(0,2,RUNNING,org.apache.spark.util.SerializableBuffer@7ae4e605) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+[actor] handled message (0.043019 ms) StatusUpdate(0,2,RUNNING,org.apache.spark.util.SerializableBuffer@7ae4e605) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+[actor] received message GetLocations(broadcast_3_piece0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$m]
+[actor] handled message (0.080668 ms) GetLocations(broadcast_3_piece0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$m]
+Selector selected 0 of 3 keys
+Starting to receive [BufferMessage(id = 9, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Finished receiving [BufferMessage(id = 9, size = 48)] from [ConnectionManagerId(cluster02,45239)] in 0 ms
+Received [BufferMessage(id = 9, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Selector selected 0 of 3 keys
+Handler thread delay is 0 ms
+Handling [BufferMessage(id = 9, size = 48)] from [ConnectionManagerId(cluster02,45239)]
+Calling back
+Handling message BufferMessage(id = 9, size = 48)
+Handling as a buffer message BufferMessage(id = 9, size = 48)
+Creating block message of size 44 bytes
+Trying to convert buffer java.nio.HeapByteBuffer[pos=0 lim=44 cap=44] to block message
+Created BlockMessage [type = 1, id = broadcast_3_piece0, level = null, data = null]
+Converted block message array from buffer message in 0.0 s
+Parsed as a block message array
+Received [GetBlock(broadcast_3_piece0)]
+GetBlock broadcast_3_piece0 started from 1421988718195
+Getting local block broadcast_3_piece0 as bytes
+Level for block broadcast_3_piece0 is StorageLevel(true, true, false, false, 1)
+Getting block broadcast_3_piece0 from memory
+GetBlock broadcast_3_piece0 used  1 ms and got buffer java.nio.HeapByteBuffer[pos=0 lim=2251 cap=2251]
+Adding BlockMessage [type = 2, id = broadcast_3_piece0, level = null, data = 2251]
+Added BufferMessage(id = 8, size = 2299)
+Buffer list:
+java.nio.HeapByteBuffer[pos=0 lim=4 cap=4]
+java.nio.HeapByteBuffer[pos=0 lim=44 cap=44]
+java.nio.HeapByteBuffer[pos=0 lim=4 cap=4]
+java.nio.HeapByteBuffer[pos=0 lim=2251 cap=2251]
+Response to BufferMessage(id = 9, size = 48) does not have ack id set
+Before Sending [BufferAckMessage(aid = 9, id = 9, size = 2303)] to [ConnectionManagerId(cluster02,45239)] connectionid: cluster01_44766_2
+Sending [BufferAckMessage(aid = 9, id = 9, size = 2303)] to [ConnectionManagerId(cluster02,45239)]
+Added [BufferAckMessage(aid = 9, id = 9, size = 2303)] to outbox for sending to [ConnectionManagerId(cluster02,45239)]
+Selector selected 0 of 3 keys
+Selector selected 0 of 3 keys
+Starting to send [BufferAckMessage(aid = 9, id = 9, size = 2303)] to [ConnectionManagerId(cluster02,45239)]
+Handling delay is 1 ms
+Finished sending [BufferAckMessage(aid = 9, id = 9, size = 2303)] to [ConnectionManagerId(cluster02,45239)] in 1 ms
+Selector selected 0 of 3 keys
+[actor] received message UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),broadcast_3_piece0,StorageLevel(false, true, false, false, 1),2251,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$n]
+Added broadcast_3_piece0 in memory on cluster02:45239 (size: 2.2 KB, free: 2.9 GB)
+[actor] handled message (0.36549 ms) UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),broadcast_3_piece0,StorageLevel(false, true, false, false, 1),2251,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$n]
+[actor] received message ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+parentName: , name: TaskSet_1, runningTasks: 1
+[actor] handled message (0.728485 ms) ReviveOffers from Actor[akka://sparkDriver/user/CoarseGrainedScheduler#1252859668]
+[actor] received message GetLocations(rdd_9_0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$o]
+[actor] handled message (0.062815 ms) GetLocations(rdd_9_0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$o]
+[actor] received message GetMapOutputStatuses(0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$p]
+Asked to send map output locations for shuffle 0 to sparkExecutor@cluster02:33470
+Size of output statuses for shuffle 0 is 127 bytes
+[actor] handled message (2.76059 ms) GetMapOutputStatuses(0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$p]
+[actor] received message UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),rdd_9_0,StorageLevel(false, true, false, true, 1),67069416,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$q]
+Added rdd_9_0 in memory on cluster02:45239 (size: 64.0 MB, free: 2.8 GB)
+[actor] handled message (0.745815 ms) UpdateBlockInfo(BlockManagerId(0, cluster02, 45239, 0),rdd_9_0,StorageLevel(false, true, false, true, 1),67069416,0,0) from Actor[akka.tcp://sparkExecutor@cluster02:33470/temp/$q]
+[actor] received message StatusUpdate(0,2,FINISHED,org.apache.spark.util.SerializableBuffer@6255e7ef) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+parentName: , name: TaskSet_1, runningTasks: 0
+[actor] handled message (1.166529 ms) StatusUpdate(0,2,FINISHED,org.apache.spark.util.SerializableBuffer@6255e7ef) from Actor[akka.tcp://sparkExecutor@cluster02:44086/user/Executor#-556292822]
+Finished task 0.0 in stage 1.0 (TID 2) in 835 ms on cluster02 (1/1)
+Removed TaskSet 1.0, whose tasks have all completed, from pool 
+Stage 1 (reduce at VertexRDD.scala:111) finished in 0.838 s
+After removal of stage 2, remaining stages = 1
+After removal of stage 1, remaining stages = 0
+Job finished: reduce at VertexRDD.scala:111, took 2.560646998 s
+Shutdown hook called
