@@ -2,7 +2,7 @@ K-Tough
 =======
 This is a trial for calculating the TOUGHNESS for any given graph.
 
-Let G(V,E) be an undirected graph, t(G) denotes the toughness of G. t(G) is defined as:
+Let G(V,E) be an undirected graph, t(G) denotes the toughness of G defined as:
 
 	t(G) = min{|S|/w(G-S)}
 	
