@@ -6,7 +6,8 @@ Let G(V,E) be an undirected graph, t(G) denotes the toughness of G defined as:
 
 	t(G) = min{|S|/w(G-S)}
 	
-where S is any vertex seperator for G, |S| is the size of vertex seperator S, w(G) is the number of connected components of G.
+where S is any vertex seperator for G, |S| is the size of vertex seperator S,
+w(G) is the number of connected components of G.
 
 ##Usage 
 * To compile and package the project,
