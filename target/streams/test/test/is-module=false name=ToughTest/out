@@ -3,3 +3,9 @@
 [0m[[0minfo[0m] [0m[32m- should return 1/(n-1) when calculating a star graph[0m[0m
 [0m[[0minfo[0m] [0m[32m- should return 1/2 when calculating a line graph[0m[0m
 [0m[[0minfo[0m] [0m[32m- should return 1 when calculating a circle graph[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return infinity when calculating a complete graph[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return 0.25 with running example 1[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return 0.5 with running example 2[0m[0m
+[0m[[0minfo[0m] [0m[32mThe toughness finder[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return a list of subgraphs with toughness greater than t[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return an empty list when having no subgraphs with toughess greater than t[0m[0m
