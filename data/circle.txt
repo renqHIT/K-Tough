@@ -1,0 +1,9 @@
+# circle graph: circle.txt 
+# Nodes: 6 Edges: 6
+# FromNodeId	ToNodeId
+0 	1	
+1	2
+2	3
+3	4
+4	5
+5 	0

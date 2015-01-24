@@ -10,7 +10,7 @@ object Toughness{
   def main(args:Array[String]){
     val conf = new SparkConf().setMaster("spark://cluster01:7077").setAppName("Toughness").set("spark.executor.memory", "6g")
       val sc = new SparkContext(conf)
-      val graph:Graph[Int, Int] = GraphLoader.edgeListFile(sc, "/home/hadoop/data/roadNet-CA.txt")
+      val graph:Graph[Int, Int] = GraphLoader.edgeListFile(sc, "/home/renq/data/roadNet-CA.txt")
       val inDegrees = graph.inDegrees
       val degrees : VertexRDD[Int] = graph.degrees
       val vertices = graph.vertices
