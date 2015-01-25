@@ -8,9 +8,10 @@ import org.apache.spark.rdd.RDD
 
 object Toughness{
   def main(args:Array[String]){
+    val dataDir = "hdfs://usr/renq/k-tough/data"
     val conf = new SparkConf().setMaster("spark://cluster01:7077").setAppName("Toughness").set("spark.executor.memory", "6g")
       val sc = new SparkContext(conf)
-      val graph:Graph[Int, Int] = GraphLoader.edgeListFile(sc, "/home/renq/data/roadNet-CA.txt")
+      val graph:Graph[Int, Int] = GraphLoader.edgeListFile(sc, s"$dataDir/roadNet-CA.txt")
       val inDegrees = graph.inDegrees
       val degrees : VertexRDD[Int] = graph.degrees
       val vertices = graph.vertices
@@ -25,7 +26,7 @@ object Toughness{
       println("graph.degrees type is: " + degrees.getClass)
       val degree10 = degrees.filter{ case (d : (VertexId,Int)) => d._2 >= 10 }
       //degree10.collect.foreach(println(_))
-      //val debugString = vertices.toDebugString
+      
       //println(debugString)
       //degree10.collect.foreach(println(_))
       //2.compute toughness for vertices above
