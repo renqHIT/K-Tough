@@ -24,7 +24,9 @@ object Toughness{
       seperator += eg1.pickRandomVertex()
     }
     val sub_eg = eg1.subgraph(vpred = (vid, attr) => seperator contains vid)
-    val project_eg = eg1.mask(sub_eg)
+    val cc = sub_eg.connectedComponents.vertices.collect().toList.size
+    val tough = seperator.size.toFloat/cc
+    //val project_eg = eg1.mask(sub_eg)
     //val neighbors = GraphOps.collectNeighborIds()
     //val inDegrees = graph.inDegrees
     //val degrees : VertexRDD[Int] = graph.degrees
