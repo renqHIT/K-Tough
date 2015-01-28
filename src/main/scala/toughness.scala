@@ -20,26 +20,35 @@ class Toughness{
       List("target/scala-2.10/toughness_2.10-1.0.jar"))
     val road:Graph[Int, Int] = GraphLoader.edgeListFile(sc, s"$dataDir/roadNet-CA.txt")
     val eg1 = GraphLoader.edgeListFile(sc, s"$dataDir/eg1.txt")
-    val combine_eg1 = eg1.vertices.collect().toList.map(kv => kv._1)
-      .toSet[VertexId].subsets.map(_.toList).toList
-      //val rand_vertex = eg1.GraphOps.pickRandomVertex()
-      val seperator:collection.mutable.Set[VertexId] = collection.mutable.Set()
-      for(i <- 1 to 4){
-        seperator += eg1.pickRandomVertex()
+    val combine_eg1 = eg1.vertices.collect().toList.map(kv => kv._1).toSet[VertexId].subsets.map(_.toList).toList
+    val seperator:collection.mutable.Set[VertexId] = collection.mutable.Set()
+    val tough = 1.0
+    eg1.numVertices match {
+      case x if x < 32 => {
+        seperator = combine_eg1.toSet()
+        //TODO: implement exact toughness
       }
-      val sub_eg = eg1.subgraph(vpred = (vid, attr) => seperator contains vid)
-      val cc = sub_eg.connectedComponents.vertices.collect().toList.size
-      val tough = seperator.size.toFloat/cc
-      //println(s"Toughness of Graph $graph is $tough")
-      //val project_eg = eg1.mask(sub_eg)
-      //val neighbors = GraphOps.collectNeighborIds()
-      //val inDegrees = graph.inDegrees
-      //val degrees : VertexRDD[Int] = graph.degrees
-      //val vertices = graph.vertices
-      //val edges = graph.edges
-      //val triplets = graph.triplets
-      //2.compute toughness for vertices above
-      //3.learn the relation between vertex degree and toughness, using, say linear regression
+      case x if x > 32 => {
+        for(i <- 1 to 4){
+          seperator += eg1.pickRandomVertex()
+          val sub_eg = eg1.subgraph(vpred = (vid, attr) => seperator contains vid)
+          val cc = sub_eg.connectedComponents.vertices.collect().toList.size
+          tough = seperator.size.toFloat/cc
+        }
+      }
+      case _ => Nil
+    }
+    tough
+    //println(s"Toughness of Graph $graph is $tough")
+    //val project_eg = eg1.mask(sub_eg)
+    //val neighbors = GraphOps.collectNeighborIds()
+    //val inDegrees = graph.inDegrees
+    //val degrees : VertexRDD[Int] = graph.degrees
+    //val vertices = graph.vertices
+    //val edges = graph.edges
+    //val triplets = graph.triplets
+    //2.compute toughness for vertices above
+    //3.learn the relation between vertex degree and toughness, using, say linear regression
   }
 
   /*

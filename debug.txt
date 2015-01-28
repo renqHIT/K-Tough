@@ -1,0 +1,23 @@
+[0m[[0minfo[0m] [0mSet current project to Toughness (in build file:/home/renq/k-tough/)[0m
+[0m[[0minfo[0m] [0mCompiling 3 Scala sources to /home/renq/k-tough/target/scala-2.10/test-classes...[0m
+[0m[[31merror[0m] [0m/home/renq/k-tough/src/test/scala/ShouldSuite.scala:29: not found: value star[0m
+[0m[[31merror[0m] [0m    calculator.toughness(star) should be (0.2)[0m
+[0m[[31merror[0m] [0m                         ^[0m
+[0m[[31merror[0m] [0m/home/renq/k-tough/src/test/scala/SparkTestUtil.scala:3: not found: type FunSuite[0m
+[0m[[31merror[0m] [0mtrait SparkTestUtils extends FunSuite {[0m
+[0m[[31merror[0m] [0m                             ^[0m
+[0m[[31merror[0m] [0m/home/renq/k-tough/src/test/scala/SparkTestUtil.scala:4: not found: type SparkContext[0m
+[0m[[31merror[0m] [0m  var sc: SparkContext = _[0m
+[0m[[31merror[0m] [0m          ^[0m
+[0m[[31merror[0m] [0m/home/renq/k-tough/src/test/scala/SparkTestUtil.scala:18: not found: value test[0m
+[0m[[31merror[0m] [0m    test(name, SparkTest){[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/home/renq/k-tough/src/test/scala/SparkTestUtil.scala:43: not found: value Logger[0m
+[0m[[31merror[0m] [0m        val logger = Logger.getLogger(loggerName)[0m
+[0m[[31merror[0m] [0m                     ^[0m
+[0m[[31merror[0m] [0m/home/renq/k-tough/src/test/scala/SparkTestUtil.scala:37: not found: value Level[0m
+[0m[[31merror[0m] [0m    setLogLevels(Level.WARN, Seq("spark", "org.eclipse.jetty", "akka"))[0m
+[0m[[31merror[0m] [0m                 ^[0m
+[0m[[31merror[0m] [0m6 errors found[0m
+[0m[[31merror[0m] [0m(test:[31mcompile[0m) Compilation failed[0m
+[0m[[31merror[0m] [0mTotal time: 4 s, completed Jan 28, 2015 5:14:18 PM[0m
