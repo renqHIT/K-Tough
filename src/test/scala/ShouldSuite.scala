@@ -38,6 +38,12 @@ class ToughCalculatorTest extends SparkTestUtils with ShouldMatchers {
     val line = GraphLoader.edgeListFile(sc, s"$dataDir/line.txt")
     calculator.toughness(line) should be (0.5)
   }
+  sparkTest("Circle Graph") {
+    val calculator = new Toughness
+    //"return 1/2 when calculating a line graph" in 
+    val circle = GraphLoader.edgeListFile(sc, s"$dataDir/circle.txt")
+    calculator.toughness(circle) should be (1)
+  }
 }
 
 /*

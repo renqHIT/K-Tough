@@ -16,19 +16,27 @@ class Toughness{
     val dataDir = "/home/renq/k-tough/data"
     //val conf = new SparkConf().setMaster("spark://cluster01:7077").setAppName("Toughness").set("spark.executor.memory", "6g")
     //val sc = new SparkContext(conf)
-    val sc = new SparkContext("local", "Toughness", "127.0.0.1",
-      List("target/scala-2.10/toughness_2.10-1.0.jar"))
+    val sc = new SparkContext("local", "Toughness", "127.0.0.1", List("target/scala-2.10/toughness_2.10-1.0.jar"))
     val road:Graph[Int, Int] = GraphLoader.edgeListFile(sc, s"$dataDir/roadNet-CA.txt")
     val eg1 = GraphLoader.edgeListFile(sc, s"$dataDir/eg1.txt")
-    val combine_eg1 = eg1.vertices.collect().toList.map(kv => kv._1).toSet[VertexId].subsets.map(_.toList).toList
-    val seperator:collection.mutable.Set[VertexId] = collection.mutable.Set()
-    val tough = 1.0
+    val combine_eg1:List[List[VertexId]] = eg1.vertices.collect().toList.map(kv => kv._1).toSet[VertexId].subsets.map(_.toList).toList
+    var seperator:collection.mutable.Set[VertexId] = collection.mutable.Set()
+    var tough = 1.0
     eg1.numVertices match {
       case x if x < 32 => {
-        seperator = combine_eg1.toSet()
-        //TODO: implement exact toughness
+        //seperator = combine_eg1.toSet()
+        for(cs <- combine_eg1){
+          for(cx <- cs){
+            seperator = collection.mutable.Set(cx)
+          }
+          val sub_eg = eg1.subgraph(vpred = (vid, attr) => seperator contains vid)
+          val cc = sub_eg.connectedComponents.vertices.collect().toList.size
+          tough = math.min(tough, seperator.size.toFloat/cc)
+        }
+        tough
       }
       case x if x > 32 => {
+        seperator = collection.mutable.Set()
         for(i <- 1 to 4){
           seperator += eg1.pickRandomVertex()
           val sub_eg = eg1.subgraph(vpred = (vid, attr) => seperator contains vid)
