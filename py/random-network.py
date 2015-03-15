@@ -8,28 +8,28 @@ from matplotlib import *
 #graph_draw(g, pos=pos, output="rewire_orig.pdf", output_size=(300,300))
 
 def sample_k(max):
-	accept = False
-	while not accept:
-		k = randint(1, max+1)
-		accept = random() < 1.0/k
-	return k
+    accept = False
+    while not accept:
+        k = randint(1, max+1)
+        accept = random() < 1.0/k
+    return k
 
 
 def deg_sample():
-	if random() > 0.5:
-		return poisson(4), poisson(4)
-	else:
-		return poisson(20), poisson(20)
+    if random() > 0.5:
+        return poisson(4), poisson(4)
+    else:
+        return poisson(20), poisson(20)
 
 
-g = random_graph(1000, lambda: sample_k(40), model="probabilistic", vertex_corr=lambda i, k: 1.0 / (1 + abs(i - k)), 
-				directed=False, n_iter=100)
+g = random_graph(20, lambda: sample_k(40), model="probabilistic", vertex_corr=lambda i, k: 1.0 / (1 + abs(i - k)), 
+        directed=False, n_iter=100)
 
 print scalar_assortativity(g, "out")
 
 pos = arf_layout(g)
-graph_draw(g, pos=pos, output="r.pdf", output_size=(1000,1000))
-g.save("r.xml.gz")
+graph_draw(g, pos=pos, vertex_index=g.vertex_index, vertex_font_size=18, output="r-20.pdf", output_size=(500,500))
+g.save("r-20.xml.gz")
 
 #hist = combined_corr_hist(g, "in", "out")
 #clf()
