@@ -25,10 +25,9 @@ spark-submit --class "Toughness" --master spark://cluster07:7077 your-project_2.
 ```
 
 ##Visualize
-=======
-To visualize graph test cases (<50 nodes for simplicity), we use a Python module: graph-tool.
+We use a Python module: graph-tool to visualize graphs (<50 nodes for simplicity).
 http://graph-tool.skewed.de/
-To draw a graph to a png/pdf file, use graph_draw function:
+* To draw a graph to a png/pdf file, use graph_draw function:
 ```
 graph_draw(g, vertex_text=g.vertex_index, vertex_font_size=18, output_size=(500,500), output="example-2.png")
 ```
