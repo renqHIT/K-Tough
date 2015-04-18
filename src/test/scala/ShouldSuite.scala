@@ -1,15 +1,14 @@
-package org.hit.renq.toughness
-
-import org.scalatest.FunSpec 
-import org.scalatest.FlatSpec
+import org.hit.db.toughness.Toughness
 import org.scalatest.FunSuite
 import org.scalatest.matchers.ShouldMatchers
 import org.apache.spark._
 import org.apache.spark.graphx._
 import org.apache.spark.graphx.util.GraphGenerators
 import org.apache.spark.rdd.RDD
+import org.hit.db.toughness
 
-trait SparkTestUtils extends FunSuite {
+
+trait SparkTestUtilA extends FunSuite {
   var sc: SparkContext = _
   def sparkTest(name: String)(body: => Unit) {
     sc = new SparkContext("local[4]", name)
@@ -24,25 +23,26 @@ trait SparkTestUtils extends FunSuite {
   }
 }
 
-class ToughCalculatorTest extends SparkTestUtils with ShouldMatchers {
+class ToughCalculatorTest extends SparkTestUtilA with ShouldMatchers {
   val dataDir = "/home/renq/k-tough/data"
   sparkTest("Star Graph") {
     val calculator = new Toughness
     //"return 1/(n-1) when calculating a star graph" 
     val star = GraphLoader.edgeListFile(sc, s"$dataDir/star.txt")
-    calculator.toughness(star) should be (0.2)
+    // +- to check whether a number is within a range
+    calculator.toughness(star) should be (0.2 +- 0.00001)
   } 
   sparkTest("Line Graph") {
     val calculator = new Toughness
     //"return 1/2 when calculating a line graph" in 
     val line = GraphLoader.edgeListFile(sc, s"$dataDir/line.txt")
-    calculator.toughness(line) should be (0.5)
+    calculator.toughness(line) should be (0.5 +- 0.00001)
   }
   sparkTest("Circle Graph") {
     val calculator = new Toughness
     //"return 1/2 when calculating a line graph" in 
     val circle = GraphLoader.edgeListFile(sc, s"$dataDir/circle.txt")
-    calculator.toughness(circle) should be (1)
+    calculator.toughness(circle) should be (1.0 +- 0.00001)
   }
 }
 

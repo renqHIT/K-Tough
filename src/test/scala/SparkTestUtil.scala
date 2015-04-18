@@ -9,12 +9,12 @@ import org.apache.spark.rdd.RDD
 
 object SparkTest extends org.scalatest.Tag("org.hit.renq.tags.SparkTest")
 
-trait SparkTestUtils extends FunSuite {
+trait SparkTestUtilB extends FunSuite {
   var sc: SparkContext = _
 
   def sparkTest(name: String)(body: => Unit) {
     test(name, SparkTest){
-      sc = new SparkContext("local[4]", name)
+      sc = new SparkContext("local[2]", name)
       try {
         body
       }
@@ -28,7 +28,7 @@ trait SparkTestUtils extends FunSuite {
 }
 
 object SparkUtil {
-  class OurAwesomeClassTest extends SparkTestUtils with ShouldMatchers {
+  class OurAwesomeClassTest extends SparkTestUtilB with ShouldMatchers {
     val dataDir = "/home/renq/k-tough/data"
     sparkTest("spark filter") {
       val line = GraphLoader.edgeListFile(sc, s"$dataDir/line.txt")
