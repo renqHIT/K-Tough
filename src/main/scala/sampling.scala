@@ -3,7 +3,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.SparkContext._
 import org.apache.spark.rdd.{RDD, PairRDDFunctions}
 
-object Sampling {
+object Sampling{
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("Toughness-5.12")
       .setMaster("spark://cluster01:7077")
