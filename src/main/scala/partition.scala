@@ -1,5 +1,7 @@
 import java.io.{File, PrintWriter, FileNotFoundException}
 
+import org.apache.commons.io.FileUtils
+
 import scala.io.Source
 import org.apache.spark.graphx.{PartitionID, VertexId, PartitionStrategy}
 
@@ -8,14 +10,14 @@ object Partitions{
     //val dataDir = "/home/renq/k-tough/data"
     //val filename = "data/roadNet-CA.txt"
     val filename = "data/eg1.txt"
-    val numParts: Int = 4
+    val numParts = 4
+    val output: Array[File] = new Array[File](numParts)
 
     try {
       for (line <- Source.fromFile(filename).getLines()) {
         if(line.startsWith("#")){
           println(line)
         }else {
-          val writer = new PrintWriter(new File("data/partitions/EdgePartition2D/test1.txt" ))
           val src: String = line.split("\\s+")(0)
           val dst: String = line.split("\\s+")(1)
           val ceilSqrtNumParts = math.ceil(math.sqrt(numParts)).toInt
@@ -24,8 +26,7 @@ object Partitions{
           val row = (math.abs(dst.toInt * mixingPrime) % ceilSqrtNumParts).toInt
           val partitionTo = (col * ceilSqrtNumParts + row) % numParts
           println(src, dst, partitionTo)
-          writer.write("Hello Scala")
-          writer.close()
+          FileUtils.writeStringToFile(output(partitionTo), src+", "+dst+'\n', true)
         }
       }
     } catch {
