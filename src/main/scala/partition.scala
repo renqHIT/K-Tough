@@ -52,7 +52,7 @@ object Partitions{
           val dst: String = line.split("\\s+")(1)
           val mixingPrime: Long = 1125899906842597L
           val partitionTo = (math.abs(src.toInt * mixingPrime) % numParts).toInt
-          FileUtils.writeStringToFile(output(partitionTo), src+", "+dst+'\n', true)
+          FileUtils.writeStringToFile(output(partitionTo + 4), src+", "+dst+'\n', true)
         }
       }
     } catch {
@@ -73,7 +73,7 @@ object Partitions{
           val src: String = line.split("\\s+")(0)
           val dst: String = line.split("\\s+")(1)
           val partitionTo = math.abs((src.toInt, dst.toInt).hashCode()) % numParts
-          FileUtils.writeStringToFile(output(partitionTo), src+", "+dst+'\n', true)
+          FileUtils.writeStringToFile(output(partitionTo + 8), src+", "+dst+'\n', true)
         }
       }
     } catch {
@@ -95,10 +95,10 @@ object Partitions{
           val dst: String = line.split("\\s+")(1)
           if (src < dst) {
             val partitionTo = math.abs((src.toInt, dst.toInt).hashCode()) % numParts
-            FileUtils.writeStringToFile(output(partitionTo), src+", "+dst+'\n', true)
+            FileUtils.writeStringToFile(output(partitionTo + 12), src+", "+dst+'\n', true)
           } else {
             val partitionTo = math.abs((dst.toInt, src.toInt).hashCode()) % numParts
-            FileUtils.writeStringToFile(output(partitionTo), src+", "+dst+'\n', true)
+            FileUtils.writeStringToFile(output(partitionTo + 12), src+", "+dst+'\n', true)
           }
         }
       }
