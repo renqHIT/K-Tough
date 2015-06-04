@@ -1,4 +1,4 @@
-package org.hit.db.toughness
+package renq.tough 
 
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._  
